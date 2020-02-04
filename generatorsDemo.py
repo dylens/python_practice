@@ -56,6 +56,15 @@ def generator2(num):
     return res
 
 
+def generator3(num):
+    res = []
+    g = (x for x in range(num))
+    for n in g:
+        res.append(n)
+        print("n:", n)
+    return res
+
+
 def fib(num):
     n, a, b = 0, 0, 1
     while n < num:
@@ -100,6 +109,18 @@ class AnagramTests(unittest.TestCase):
         self.assertEqual(
             [1, 1, 2, 3, 5, 8],
             generator1(6)
+        )
+
+    def test_generator2(self):
+        self.assertEqual(
+            [1, 1, 2, 3, 5, 8],
+            generator2(6)
+        )
+
+    def test_generator3(self):
+        self.assertEqual(
+            [0, 1, 2, 3, 4, 5],
+            generator3(6)
         )
 
 # 是set，而不是list
